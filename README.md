@@ -7,12 +7,13 @@ Thank you for taking the assessment. We will have you work with a sample Pet Ado
 - We will run the tests locally on our machines. Please provide any documentation in the README you think might be needed for us to be able to follow the steps to do that.
 
 ## Steps
-1. Clone this repository.
-2. Navigate to the project directory and review it.
-3. Run migrations and seeds.
-4. Create a personal repository where you can use our clone as the main branch.
-5. Create a feature branch for you to submit changes. **Do not commit directly on the main branch.**
-6. Create a pull request and send us the link for review.
+1. Create your own github repository for the assessment. The access can be either public or private. In case it is private, we will send you the email list so you can allow the access.
+2. Unzip the assessment we sent, and upload it to the main branch.
+3. Create and checkout a feature branch for you to submit changes. **Do not commit directly on the main branch.**
+4. Navigate to the project directory and review it.
+5. Run migrations and seeds.
+6. Read the instructions below and develop the requirements.
+7. After you commit and push your changes, create a pull request and send us the link for review.
 
 ## Current State
 The functionalities and tests below already exist on the project:
