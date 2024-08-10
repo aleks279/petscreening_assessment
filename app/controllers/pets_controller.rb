@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class PetsController < ApplicationController
-  before_action :set_pet, only: %i[ show edit update destroy ]
+  before_action :set_pet, only: %i[show edit update destroy]
 
   # GET /pets or /pets.json
   def index
@@ -7,8 +9,7 @@ class PetsController < ApplicationController
   end
 
   # GET /pets/1 or /pets/1.json
-  def show
-  end
+  def show; end
 
   # GET /pets/new
   def new
@@ -16,8 +17,7 @@ class PetsController < ApplicationController
   end
 
   # GET /pets/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /pets or /pets.json
   def create
@@ -25,7 +25,7 @@ class PetsController < ApplicationController
 
     respond_to do |format|
       if @pet.save
-        format.html { redirect_to pet_url(@pet), notice: "Pet was successfully created." }
+        format.html { redirect_to pet_url(@pet), notice: 'Pet was successfully created.' }
         format.json { render :show, status: :created, location: @pet }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class PetsController < ApplicationController
   def update
     respond_to do |format|
       if @pet.update(pet_params)
-        format.html { redirect_to pet_url(@pet), notice: "Pet was successfully updated." }
+        format.html { redirect_to pet_url(@pet), notice: 'Pet was successfully updated.' }
         format.json { render :show, status: :ok, location: @pet }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +52,20 @@ class PetsController < ApplicationController
     @pet.destroy!
 
     respond_to do |format|
-      format.html { redirect_to pets_url, notice: "Pet was successfully destroyed." }
+      format.html { redirect_to pets_url, notice: 'Pet was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_pet
-      @pet = Pet.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def pet_params
-      params.require(:pet).permit(:name, :kind, :breed)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_pet
+    @pet = Pet.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def pet_params
+    params.require(:pet).permit(:name, :kind, :breed)
+  end
 end
