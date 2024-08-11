@@ -14,4 +14,9 @@
     <%= pet.breed %>
   </p>
 
+  <p>
+    <strong>Owner:</strong>
+    <%= "#{pet.try(:user).try(:name)} #{pet.try(:user).try(:last_name)}" %>
+  </p>
+
 </div>

@@ -5,5 +5,6 @@ FactoryBot.define do
     name { Faker::Creature::Dog.name }
     kind { 'Dog' }
     breed { Faker::Creature::Dog.breed }
+    user { create(:user) }
   end
 end
