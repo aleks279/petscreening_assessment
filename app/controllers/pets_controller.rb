@@ -2,6 +2,7 @@
 
 class PetsController < ApplicationController
   before_action :set_pet, only: %i[show edit update destroy]
+  before_action :set_breed_info, only: %i[show]
   before_action :set_users, only: %i[new edit create update]
 
   # GET /pets or /pets.json
@@ -63,6 +64,19 @@ class PetsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_pet
     @pet = Pet.find(params[:id])
+  end
+
+  def set_breed_info
+    binding.pry
+    @breed_info = @pet.is_dog? ? BreedDataService.new(breed_name: @pet.breed).call : nil
+
+    return if @breed_info.nil?
+
+    @description = @breed_info['attributes']['description']
+    @lifespan = "#{@breed_info['attributes']['life']['min']} to #{@breed_info['attributes']['life']['max']}"
+    @male_weight = "#{@breed_info['attributes']['male_weight']['min']} to #{@breed_info['attributes']['male_weight']['max']}"
+    @female_weight = "#{@breed_info['attributes']['female_weight']['min']} to #{@breed_info['attributes']['female_weight']['max']}"
+    @hypoallergenic = @breed_info['attributes']['hypoallergenic'] ? 'Yes' : 'No'
   end
 
   def set_users

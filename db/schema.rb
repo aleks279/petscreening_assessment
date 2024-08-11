@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,26 +12,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_10_232053) do
-  create_table "pets", force: :cascade do |t|
-    t.string "name"
-    t.string "kind"
-    t.string "breed"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.float "weight"
-    t.integer "user_id"
-    t.index ["user_id"], name: "index_pets_on_user_id"
+ActiveRecord::Schema[7.1].define(version: 20_240_810_232_053) do
+  create_table 'pets', force: :cascade do |t|
+    t.string 'name'
+    t.string 'kind'
+    t.string 'breed'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.float 'weight'
+    t.integer 'user_id'
+    t.index ['user_id'], name: 'index_pets_on_user_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "last_name"
-    t.string "phone"
-    t.string "address"
-    t.string "id_number"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'users', force: :cascade do |t|
+    t.string 'name'
+    t.string 'last_name'
+    t.string 'phone'
+    t.string 'address'
+    t.string 'id_number'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
-
 end

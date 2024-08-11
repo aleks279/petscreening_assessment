@@ -2,6 +2,10 @@
 
 <%= render @pet %>
 
+<% if @breed_info.present? %>
+  <%= render partial: 'breed_info', locals: { description: @description, lifespan: @lifespan, male_weight: @male_weight, female_weight: @female_weight, hypoallergenic: @hypoallergenic } %>
+<% end %>
+
 <div>
   <%= link_to "Edit this pet", edit_pet_path(@pet) %> |
   <%= link_to "Back to pets", pets_path %>
